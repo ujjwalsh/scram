@@ -2,7 +2,8 @@ dist: trusty
 
 language: java
 script: mvn -Psafer -B -e -T 1C verify
-
+arch:
+  - ppc64le
 jdk:
   - openjdk8
 
