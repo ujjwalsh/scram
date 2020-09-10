@@ -10,7 +10,8 @@ before_install:
         - curl https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz%7Ctar -xz --strip 1 -C /opt/maven
         - export MAVEN_HOME=/opt/maven
         - export PATH=${MAVEN_HOME}/bin:${PATH}
-	- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+install: 
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script: mvn -Psafer -B -e -T 1C verify
 arch:
   - ppc64le
